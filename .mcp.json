@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "kooperativa": {
+      "command": "npx",
+      "args": ["-y", "@kooperativa_team/mcp-server@0.3.0"]
+    }
+  }
+}

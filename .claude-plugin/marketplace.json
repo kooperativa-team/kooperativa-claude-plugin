@@ -1,0 +1,17 @@
+{
+  "name": "kooperativa-marketplace",
+  "description": "Kooperativa plugins for Claude Code: B2B lead generation with people and company data.",
+  "owner": {
+    "name": "Kooperativa",
+    "email": "support@kooperativa.io",
+    "url": "https://kooperativa.io"
+  },
+  "plugins": [
+    {
+      "name": "kooperativa",
+      "source": ".",
+      "description": "Find and qualify B2B leads with structured people and company data. No email or phone data.",
+      "category": "productivity"
+    }
+  ]
+}
