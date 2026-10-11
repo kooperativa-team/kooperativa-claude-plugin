@@ -32,7 +32,6 @@ The Kooperativa plugin starts the official MCP server (`@kooperativa_team/mcp-se
 | "No Kooperativa API key found" | `login` has not been run, or the stored key is malformed. Run `login` again |
 | 401 `API_KEY_INVALID` | The key is revoked or wrong. Create a new key and run `login` again |
 | 402 `LICENSE_INACTIVE` | The workspace has no active license |
-| 402 `REALTIME_REQUIRES_PAID_LICENSE` | The `*_realtime` tools need a workspace with a billing relationship |
 | 429 | Per-minute rate limit reached. Wait for the `Retry-After` seconds |
 
 Documentation: https://docs.kooperativa.io. Support: support@kooperativa.io.

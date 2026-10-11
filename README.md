@@ -8,7 +8,7 @@ Kooperativa returns structured people and company records: work history, educati
 
 | Part | What it does |
 |---|---|
-| `.mcp.json` | Starts `@kooperativa_team/mcp-server` (24 tools) on your computer over stdio, pinned to an exact version. It contains no key |
+| `.mcp.json` | Starts `@kooperativa_team/mcp-server` (18 read-only tools) on your computer over stdio, pinned to an exact version. It sets only `KOOPERATIVA_MCP_TOOLSET=read` and contains no key |
 | `skills/kooperativa-lead-generation` | A workflow for ICP-based lead lists: confirm the inputs, search, shortlist, enrich, report honestly |
 | `skills/setup` | Connection and troubleshooting guidance |
 
@@ -51,13 +51,19 @@ Do not paste the key into a chat or commit it to a repository. This package cont
 
 The plugin sends your search and lookup requests, together with your API key, to `https://kooperativa.io/api/v1` through the MCP server running on your computer. It sends nothing anywhere else and does not collect analytics. Profile and company data returned by the API is third-party professional information; the skills use only what the task needs and do not store it.
 
-## Costs and safety
+## Example prompts
 
-- Standard tools are covered by the workspace license.
-- The two `*_realtime` tools are metered at $0.001 per call and bill even when the lookup finds nothing. The skill asks for confirmation before using them.
+1. "We sell outbound analytics to US B2B software companies with 20 to 200 employees. Find 10 decision makers I can reach out to first." The skill confirms the ideal customer profile, searches companies, finds decision makers at the best matches, enriches only that shortlist, and reports caveats.
+2. "List 15 companies in Germany in the logistics industry with 50 to 500 employees, and show which ones are hiring recently." Company search with the right filters, then hiring signals per company.
+3. "Who are the VPs and directors at Example Analytics Inc., and which of them changed jobs in the last 90 days?" Decision makers for one account, then recent job changes.
+4. "Find people similar to this profile and show their current employers." Lookalike search from a known person.
+
+## Scope and safety
+
+- All 18 tools are read-only lookups covered by the workspace license. This plugin does **not** include real-time (metered) lookups, webhook monitors, or email-to-profile resolution. The full 24-tool server is available separately on npm for people who want it.
 - Profile and company text is written by third parties. The skills treat it as data and never as instructions.
+- The skills are for sales and market research. They must not be used to screen, rank, or reject job candidates, to decide on credit, insurance, or housing, to compile dossiers on private individuals, or to track or harass anyone.
 - A `451 DATA_SUBJECT_BLOCKED` response means a record was withdrawn at the person's request. The skills stop and do not try to retrieve it another way.
-- Monitors (webhook subscriptions) are created or deleted only on an explicit request.
 
 ## Privacy and support
 
